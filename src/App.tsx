@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 import { useState, useEffect } from 'react'
 import './App.css'
 
@@ -38,17 +37,22 @@ function App() {
   useEffect(() => {
     if (searchedBounds) {
       // check latitude and longitude of each food truck is within searchedBounds
-      const newDisplayedData = data.filter(record => 
-        (record.latitude < searchedBounds.bounds.northeast.lat) && 
-        (record.latitude > searchedBounds.bounds.southwest.lat) &&
-        (record.longitude < searchedBounds.bounds.northeast.lng) &&
-        (record.longitude > searchedBounds.bounds.southwest.lng)
+      const newDisplayedData = (data ?? []).filter(record => 
+        // Filter food trucks based on their bounds within specified zip code
+        // (record.latitude < searchedBounds.bounds.northeast.lat) && 
+        // (record.latitude > searchedBounds.bounds.southwest.lat) &&
+        // (record.longitude < searchedBounds.bounds.northeast.lng) &&
+        // (record.longitude > searchedBounds.bounds.southwest.lng)
+
+        // Filter food trucks based on their bounds within specified proximity of a zip code
+        // 1 mile is 1/69 latitude and 1/60 longitude
+        (record.latitude < searchedBounds.geometry.lat + proximity * (1/69)) &&
+        (record.latitude > searchedBounds.geometry.lat - proximity * (1/69)) &&
+        (record.longitude < searchedBounds.geometry.lng + proximity * (1/60)) &&
+        (record.longitude > searchedBounds.geometry.lng - proximity * (1/60))
       )
       setDisplayedData(newDisplayedData);
     }
-
-      // 0.0144927536 degree latitude is 1 mile (1/69)
-  // 0.016666666 degree longitude is 1 mile (1/60)
   }, [data, searchedBounds])
 
 console.log(displayedData)
