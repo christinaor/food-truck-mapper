@@ -1,0 +1,22 @@
+@import '/src/styles/colors.scss';
+
+.resultsList {
+  display: grid;
+}
+
+.resultsListHeader {
+  font-weight: 600;
+}
+
+.resultItem {
+  display: grid;
+  grid-template-columns: 10rem 10rem;
+  grid-template-rows: 2rem;
+
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.map {
+  border: 0;
+}
