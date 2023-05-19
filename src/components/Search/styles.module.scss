@@ -2,5 +2,32 @@
 
 .search {
   display: flex;
-  
+}
+
+.searchInput {
+  padding-left: 1rem;
+
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border: none;
+
+  background-color: $backgroundColorWhite;
+}
+
+.searchSubmit {
+  // padding-right: 1rem;
+
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border: none;
+  border-left: 1px solid $iconColorGrey;
+
+  background-color: $backgroundColorWhite;
+}
+
+.searchIcon {
+  padding: 0 0.5rem;
+
+  width: 1rem;
+  height: 1rem;
 }

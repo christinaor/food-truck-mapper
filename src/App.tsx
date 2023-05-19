@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-import Title from './components/Title/Title';
+import Title from './components/TitleBar/TitleBar';
 import Search from './components/Search/Search';
 import Results from './container/Results/Results';
 import ToggleListView from './components/ToggleListView/ToggleListView';
+import SearchOptionsBar from './components/SearchOptionsBar/SearchOptionsbar';
 
 function App() {
   const [data, setData] = useState();
@@ -60,30 +61,28 @@ function App() {
 console.log(displayedData)
   return (
     <>
-      <div className="app">
-        <Title />
-        <ToggleListView 
-          toggleListView={toggleListView}
-          setToggleListView={setToggleListView}
-        />
-        <Search 
-          setZipCode={setZipCode}
-          setSearchedBounds={setSearchedBounds}
-        />
-        <Results 
-          proximity={proximity}
-          data={displayedData}
-          zipCode={zipCode}
-          searchedBounds={searchedBounds}
-          toggleListView={toggleListView}
-        />
+      <Title />
+      <SearchOptionsBar
+        setZipCode={setZipCode}
+        setSearchedBounds={setSearchedBounds}
+        toggleListView={toggleListView}
+        setToggleListView={setToggleListView}
+      />
+      <Results 
+        proximity={proximity}
+        data={displayedData}
+        zipCode={zipCode}
+        searchedBounds={searchedBounds}
+        toggleListView={toggleListView}
+      />
         {/* <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a> */}
-      </div>
+
+
       {/* <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
