@@ -1,19 +1,13 @@
 @import '/src/styles/colors.scss';
 
 .toggleListView {
-  // align-self: flex-end;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  // justify-content: flex-end;
-
-  // // gap: 1rem;
-  // width: 10rem;
-
   background-color: $iconColorGrey;
   border: none;
-  border-radius: 1rem;
+  border-radius: 2rem;
   
   transition: 0.3s;
 }
@@ -25,8 +19,7 @@
 }
 
 .active {
-  border-radius: 1rem;
-  // filter: brightness(0) saturate(100%) invert(71%) sepia(0%) saturate(350%) hue-rotate(199deg) brightness(84%) contrast(88%);
-  background-color: $backgroundColorLightRed;
+  border-radius: 2rem;
 
+  background-color: $backgroundColorLightRed;
 }

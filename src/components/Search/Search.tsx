@@ -1,8 +1,6 @@
 import { useCallback, useState } from 'react';
 
 import SearchIcon from '/src/assets/search-icon.svg';
-// import SearchAddress from '../SearchAddress/SearchAddress';
-// import SearchZipCode from '../SearchZipCode/SearchZipCode';
 
 import styles from './styles.module.scss';
 
@@ -15,8 +13,9 @@ export default function Search(props: {
     setSearchedBounds,
   } = props;
 
-  const [searchZipCode, setSearchZipCode] = useState('');
-  const [address, setAddress] = useState('');
+  const [searchZipCode, setSearchZipCode] = useState<string | number>('');
+  // TODO add address to search option
+  // const [address, setAddress] = useState(''); 
 
   // Retrieve the latitude/longitude of the zip code entered by user
   const handleSearch = useCallback(() => {
@@ -42,13 +41,9 @@ export default function Search(props: {
   return (
     <div className={styles.search}>
       {/* <div className={styles.searchForm}> */}
-        {/* <div className={styles.searchAddressField}>
-          <label htmlFor="search-address">Address</label>
-          <input name="search-address" value={address} onChange={(e) => setAddress(e.target.value)} />
-        </div> */}
         {/* <div className={styles.searchZipCode}> */}
           {/* <label htmlFor="search-zip-code">Zip Code</label> */}
-          <input className={styles.searchInput} name="search-zip-code" placeholder="Search Zip Code" value={searchZipCode} onChange={(e) => setSearchZipCode(e.target.value)} />
+          <input className={styles.searchInput} name="search-zip-code" placeholder="Enter Zip Code" value={searchZipCode} onChange={(e) => setSearchZipCode(e.target.value)} />
         {/* </div> */}
         <button className={styles.searchSubmit} onClick={handleSearch}>
           <img className={styles.searchIcon} src={SearchIcon} alt="clickable search icon" />

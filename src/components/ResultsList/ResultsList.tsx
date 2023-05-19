@@ -6,8 +6,6 @@ import styles from './styles.module.scss';
 export default function ResultsList(props: { data: any; zipCode: string; searchedBounds: object; }) {
   const {
     data,
-    zipCode,
-    searchedBounds,
   } = props;
 
   const currentDate = new Date();

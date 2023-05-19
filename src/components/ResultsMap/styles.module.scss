@@ -1,6 +1,18 @@
 @import '/src/styles/colors.scss';
+@import '/src/styles/layout.scss';
 
-// .resultsMap {
+.resultsMap {
+  width: 100%;
+  height: 70vh;
+  position: relative;
+}
 
-  
-// }
+.mapImage {
+  width: 500px;
+}
+
+@media only screen and (min-width: $tablet-mid) {
+  .resultsMap {
+    height: 80vh;
+  }
+}

@@ -1,13 +1,17 @@
 @import '/src/styles/colors.scss';
+@import '/src/styles/layout.scss';
 
 .searchOptionsBar {
   display: flex;
   flex-direction: row;
-  // justify-content: space-between;
-  // align-items: center;
 
   gap: 1rem;
-  margin: 1rem 0;
-  
-  height: 3rem;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+@media only screen and (min-width: $tablet-mid) {
+  .searchOptionsBar {
+    margin-bottom: 0;
+  }
 }

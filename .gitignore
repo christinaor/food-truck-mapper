@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 DEVREADME.md
 .env
+obsolete

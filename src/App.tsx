@@ -1,21 +1,16 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 
-import Title from './components/TitleBar/TitleBar';
-import Search from './components/Search/Search';
 import Results from './container/Results/Results';
-import ToggleListView from './components/ToggleListView/ToggleListView';
-import SearchOptionsBar from './components/SearchOptionsBar/SearchOptionsbar';
+import TopBar from './container/TopBar/TopBar';
 
 function App() {
-  const [data, setData] = useState();
-  const [displayedData, setDisplayedData] = useState();
-  const [zipCode, setZipCode] = useState('');
-  const [searchedBounds, setSearchedBounds] = useState();
-  const [proximity, setProximity] = useState(1);
-  const [toggleListView, setToggleListView] = useState(false);
-
-  console.log(searchedBounds)
+  const [data, setData] = useState<object | null>();
+  const [displayedData, setDisplayedData] = useState<object | null>();
+  const [zipCode, setZipCode] = useState<string | number>('');
+  const [searchedBounds, setSearchedBounds] = useState<object | null>();
+  const [proximity, setProximity] = useState<number>(1); //TODO add proximity filter
+  const [toggleListView, setToggleListView] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -61,13 +56,19 @@ function App() {
 console.log(displayedData)
   return (
     <>
-      <Title />
-      <SearchOptionsBar
+      <TopBar
         setZipCode={setZipCode}
         setSearchedBounds={setSearchedBounds}
         toggleListView={toggleListView}
         setToggleListView={setToggleListView}
       />
+      {/* <Title />
+      <SearchOptionsBar
+        setZipCode={setZipCode}
+        setSearchedBounds={setSearchedBounds}
+        toggleListView={toggleListView}
+        setToggleListView={setToggleListView}
+      /> */}
       <Results 
         proximity={proximity}
         data={displayedData}

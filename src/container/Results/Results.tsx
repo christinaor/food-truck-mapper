@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import ResultsList from '../../components/ResultsList/ResultsList';
 import ResultsMap from '../../components/ResultsMap/ResultsMap';
 

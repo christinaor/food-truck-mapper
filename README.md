@@ -1,6 +1,8 @@
 # food-truck-mapper
 
-A service that maps nearby food trucks at a specified location. Data can be found on DataSF: https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat
+A service that maps nearby food trucks at a specified location (currently by US postal zip code).
+
+Data used can be found on DataSF: https://data.sfgov.org/Economy-and-Community/Mobile-Food-Facility-Permit/rqzj-sfat
 
 This application uses the Google Maps Embed API. The API potentially can provide the following on a Google Map embedded on the web page:
 
