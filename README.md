@@ -10,3 +10,26 @@ This application uses the Google Maps Embed API. The API potentially can provide
 -   Add interactive Street View panoramas to your application, set the location of the panorama, manipulate the Street View camera (point of view), and more (nice to have).
 -   Display search results for the visible region on a map, including nearby businesses and other places (nice to have).
 -   Draw a route between two or more specified points on the map showing the distance and travel time, using various forms of transport: walking, driving, cycling, public transit, and flying (not needed).
+
+
+### Installing packages
+
+```
+npm install
+```
+
+### Development setup
+
+This allows the benefits of compiling and hot-reloading during development.
+
+```
+npm run dev
+```
+
+### Production setup
+
+This will compile and minify the build for production.
+
+```
+npm run build
+```
