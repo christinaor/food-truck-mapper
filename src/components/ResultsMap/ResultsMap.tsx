@@ -18,8 +18,23 @@ export default function ResultsMap(props: { data: object | null; proximity: numb
   
   return (
     <>
-      {searchedBounds && <iframe width="600" height="450" className={styles.map} loading="lazy" allowFullScreen src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&center=${searchedBounds.geometry.lat},${searchedBounds.geometry.lng}&zoom=${zoomLevel}&key=${process.env.VITE_MAPS_API_KEY}`}></iframe>}
-      {!searchedBounds && <iframe width="600" height="450" className={styles.map} loading="lazy" allowFullScreen src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&zoom=${zoomLevel}&key=${process.env.VITE_MAPS_API_KEY}`}></iframe>}
+      {searchedBounds && <iframe 
+        width="350" 
+        height="450" 
+        className={styles.map} 
+        loading="lazy" 
+        allowFullScreen 
+        src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&center=${searchedBounds.geometry.lat},${searchedBounds.geometry.lng}&zoom=${zoomLevel}&q=${data?.map(record => `${record.latitude},${record.longitude}`).join('|')}&key=${process.env.VITE_MAPS_API_KEY}`}>
+      </iframe>}
+
+      {!searchedBounds && <iframe 
+        width="600" 
+        height="450" 
+        className={styles.map} 
+        loading="lazy" 
+        allowFullScreen 
+        src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&zoom=${zoomLevel}&key=${process.env.VITE_MAPS_API_KEY}`}>
+      </iframe>}
     </>
   )
 }
