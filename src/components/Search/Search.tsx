@@ -19,7 +19,7 @@ export default function Search(props: {
 
   // Retrieve the latitude/longitude of the zip code entered by user
   const handleSearch = useCallback(() => {
-    if (searchZipCode.length === 5) {
+    if (searchZipCode.toString().length === 5) {
       console.log(searchZipCode)
 
       const url = `https://api.opencagedata.com/geocode/v1/json?q=${searchZipCode}&key=${process.env.VITE_OPEN_CAGE_API_KEY}`;

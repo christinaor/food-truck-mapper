@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-export default function ResultsMap(props: { data: object | null; proximity: number; searchedBounds: object | null; zipCode: string | number; }) {
+export default function ResultsMap(props: { data: any[] | null; proximity: number; searchedBounds: {geometry: { lat: number; lng: number; }}; zipCode: string | number; }) {
   const {
     data,
     proximity,
@@ -24,7 +24,7 @@ export default function ResultsMap(props: { data: object | null; proximity: numb
         className={styles.resultsMap} 
         loading="lazy" 
         allowFullScreen 
-        src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&center=${searchedBounds.geometry.lat},${searchedBounds.geometry.lng}&zoom=${zoomLevel}&q=${data?.map(record => `${record.latitude},${record.longitude}`).join('|')}&key=${process.env.VITE_MAPS_API_KEY}`}>
+        src={`https://www.google.com/maps/embed/v1/search?q=food%20trucks%20near%20${zipCode}&center=${searchedBounds.geometry.lat},${searchedBounds.geometry.lng}&zoom=${zoomLevel}&q=${data?.map((record: { latitude: string | number; longitude: string | number }) => `${record.latitude},${record.longitude}`).join('|')}&key=${process.env.VITE_MAPS_API_KEY}`}>
       </iframe>}
 
       {!searchedBounds && <iframe 

@@ -1,5 +1,5 @@
 import Title from '../../components/TitleBar/TitleBar';
-import SearchOptionsBar from '../../components/SearchOptionsBar/SearchOptionsbar';
+import SearchOptionsBar from '../../components/SearchOptionsBar/SearchOptionsBar';
 
 import styles from './styles.module.scss';
 

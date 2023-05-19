@@ -1,15 +1,16 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 
 import Results from './container/Results/Results';
 import TopBar from './container/TopBar/TopBar';
 
 function App() {
-  const [data, setData] = useState<object | null>();
+  const [data, setData] = useState<any[]>();
   const [displayedData, setDisplayedData] = useState<object | null>();
-  const [zipCode, setZipCode] = useState<string | number>('');
-  const [searchedBounds, setSearchedBounds] = useState<object | null>();
-  const [proximity, setProximity] = useState<number>(1); //TODO add proximity filter
+  const [zipCode, setZipCode] = useState<any>();
+  const [searchedBounds, setSearchedBounds] = useState<{geometry: { lat: number; lng: number; }}>();
+
+  // const [proximity, setProximity] = useState<number>(1); //TODO add proximity filter
+  const proximity = 1;
   const [toggleListView, setToggleListView] = useState<boolean>(false);
 
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
         const currentDate = await new Date();
         // Filter out food trucks with an expired permit
         const filteredData = fetchedData.filter(
-          result => new Date(result.expirationdate) > currentDate
+          (result: { expirationdate: string; }) => new Date(result.expirationdate) > currentDate
         );
         setData(filteredData);
         setDisplayedData(filteredData);
@@ -35,7 +36,10 @@ function App() {
   useEffect(() => {
     if (searchedBounds) {
       // check latitude and longitude of each food truck is within searchedBounds
-      const newDisplayedData = (data ?? []).filter(record => 
+      const newDisplayedData = (data ?? []).filter((record: { 
+        latitude: number;
+        longitude: number;
+      }) => 
         // Filter food trucks based on their bounds within specified zip code
         // (record.latitude < searchedBounds.bounds.northeast.lat) && 
         // (record.latitude > searchedBounds.bounds.southwest.lat) &&
