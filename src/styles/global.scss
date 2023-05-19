@@ -15,12 +15,18 @@
   -webkit-text-size-adjust: 100%;
 }
 
+#root {
+  margin: 0;
+  padding: 0 1rem;
+  // padding: 0;
+}
+
 html, body {
   box-sizing: border-box;
   min-width: 100vw;
   min-height: 100vh;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 

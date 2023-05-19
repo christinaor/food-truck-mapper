@@ -4,6 +4,7 @@ import './App.css'
 import Title from './components/Title/Title';
 import Search from './components/Search/Search';
 import Results from './container/Results/Results';
+import ToggleListView from './components/ToggleListView/ToggleListView';
 
 function App() {
   const [data, setData] = useState();
@@ -11,6 +12,7 @@ function App() {
   const [zipCode, setZipCode] = useState('');
   const [searchedBounds, setSearchedBounds] = useState();
   const [proximity, setProximity] = useState(1);
+  const [toggleListView, setToggleListView] = useState(false);
 
   console.log(searchedBounds)
 
@@ -60,6 +62,10 @@ console.log(displayedData)
     <>
       <div className="app">
         <Title />
+        <ToggleListView 
+          toggleListView={toggleListView}
+          setToggleListView={setToggleListView}
+        />
         <Search 
           setZipCode={setZipCode}
           setSearchedBounds={setSearchedBounds}
@@ -69,6 +75,7 @@ console.log(displayedData)
           data={displayedData}
           zipCode={zipCode}
           searchedBounds={searchedBounds}
+          toggleListView={toggleListView}
         />
         {/* <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />

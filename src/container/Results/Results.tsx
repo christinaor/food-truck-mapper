@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import ResultsList from '../../components/ResultsList/ResultsList';
 import ResultsMap from '../../components/ResultsMap/ResultsMap';
 
@@ -7,28 +9,30 @@ export default function Results(props: {
   data: object; 
   proximity: number;
   zipCode: string; 
-  searchedBounds: object 
+  searchedBounds: object;
+  toggleListView: boolean;
 }) {
   const {
     data,
     proximity,
     zipCode,
     searchedBounds,
+    toggleListView,
   } = props;
 
   return (
     <div className={styles.results}>
-      {/* <ResultsList 
+      {toggleListView && <ResultsList 
         data={data}
         zipCode={zipCode}
         searchedBounds={searchedBounds}
-      /> */}
-      <ResultsMap 
+      />}
+      {!toggleListView && <ResultsMap 
         data={data}
         proximity={proximity}
         searchedBounds={searchedBounds}
         zipCode={zipCode}
-      />
+      />}
     </div>
   )
 }

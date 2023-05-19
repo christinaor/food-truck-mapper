@@ -2,6 +2,9 @@
 
 .resultsList {
   display: grid;
+
+  padding: 0.5rem 0;
+  width: 250px;
 }
 
 .resultsListHeader {
@@ -11,10 +14,12 @@
 .resultItem {
   display: grid;
   grid-template-columns: 10rem 10rem;
-  grid-template-rows: 2rem;
+  // grid-template-rows: 5rem;
 
   gap: 1rem;
+
   font-size: 0.8rem;
+  border-bottom: 1px solid $mainTextColorWhite;
 }
 
 .map {
