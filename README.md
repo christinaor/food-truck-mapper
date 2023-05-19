@@ -33,3 +33,6 @@ This will compile and minify the build for production.
 ```
 npm run build
 ```
+
+### Requirements
+If you'd like to spin up the application, you'll will need your own [Google Maps API key](https://console.cloud.google.com/google/maps-apis/overview) and [Open Cage API key](https://opencagedata.com).
