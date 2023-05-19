@@ -4,7 +4,10 @@ import { useCallback, useState } from 'react';
 
 import styles from './styles.module.scss';
 
-export default function Search(props: { setZipCode: any; setSearchedBounds: any; }) {
+export default function Search(props: { 
+  setZipCode: any; 
+  setSearchedBounds: any; 
+}) {
   const {
     setZipCode,
     setSearchedBounds,
