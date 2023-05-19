@@ -4,10 +4,11 @@ import ResultsMap from '../../components/ResultsMap/ResultsMap';
 import styles from './styles.module.scss';
 
 export default function Results(props: { 
-  data: object; 
+  data: any; 
   proximity: number;
-  zipCode: string; 
-  searchedBounds: object;
+  zipCode: any; 
+  searchedBounds: {geometry: { lat: number; lng: number; }};
+  // searchedBounds: any;
   toggleListView: boolean;
 }) {
   const {
