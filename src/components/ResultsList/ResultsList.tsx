@@ -12,24 +12,26 @@ export default function ResultsList(props: { data: any; zipCode: string; searche
   console.log(currentDate)
 
   return (
-    <ul className={styles.resultsList}>
-      <li key="results-list-header" className={`${styles.resultsListHeader} ${styles.resultItem}`}>
-        <div>Food Truck</div>
-        <div>Address</div>
-      </li>
-      {data?.map((result: { 
-        objectid: string; 
-        applicant: string;
-        address: string; 
-        latitude: string | number; 
-        longitude: string | number; 
-        expirationdate: string; 
-      }) => (
-        <li key={`result-${result.objectid}`} className={styles.resultItem}>
-          <div>{result.applicant}</div>
-          <div>{result.address}</div>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.resultsListContainer}>
+      <ul className={styles.resultsList}>
+        {/* <li key="results-list-header" className={styles.resultsListHeader}>
+          <h2 className={styles.resultHeaderCell}>FOOD TRUCK</h2>
+          <h2 className={styles.resultHeaderCell}>ADDRESS</h2>
+        </li> */}
+        {data?.map((result: { 
+          objectid: string; 
+          applicant: string;
+          address: string; 
+          latitude: string | number; 
+          longitude: string | number; 
+          expirationdate: string; 
+        }) => (
+          <li key={`result-${result.objectid}`} className={styles.resultItem}>
+            <div className={`${styles.resultItemCell} ${styles.resultApplicant}`}>{result.applicant}</div>
+            <div className={`${styles.resultItemCell} ${styles.resultAddress}`}>{result.address}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

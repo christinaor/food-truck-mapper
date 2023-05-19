@@ -8,7 +8,6 @@ export default function Results(props: {
   proximity: number;
   zipCode: any; 
   searchedBounds: any;
-  // searchedBounds: any;
   toggleListView: boolean;
 }) {
   const {
