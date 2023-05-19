@@ -1,0 +1,21 @@
+@import '/src/styles/colors.scss';
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1rem 0;
+
+  font-size: 0.8rem;
+}
+
+.link, .text {
+  display: flex;
+  padding: 0 0.1rem;
+}
+
+.logo {
+  width: 1.5rem;
+  height: 1.5rem;
+}
