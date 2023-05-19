@@ -1,6 +1,6 @@
 import styles from './styles.module.scss';
 
-export default function ResultsMap(props: { data: any[] | null; proximity: number; searchedBounds: {geometry: { lat: number; lng: number; }}; zipCode: string | number; }) {
+export default function ResultsMap(props: { data: any[] | null; proximity: number; searchedBounds: any; zipCode: string | number; }) {
   const {
     data,
     proximity,

@@ -7,7 +7,7 @@ export default function Results(props: {
   data: any; 
   proximity: number;
   zipCode: any; 
-  searchedBounds: {geometry: { lat: number; lng: number; }};
+  searchedBounds: any;
   // searchedBounds: any;
   toggleListView: boolean;
 }) {

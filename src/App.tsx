@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState<any[]>();
   const [displayedData, setDisplayedData] = useState<object | null>();
   const [zipCode, setZipCode] = useState<any>();
-  const [searchedBounds, setSearchedBounds] = useState<{geometry: { lat: number; lng: number; }}>();
+  const [searchedBounds, setSearchedBounds] = useState<any>(null);
 
   // const [proximity, setProximity] = useState<number>(1); //TODO add proximity filter
   const proximity = 1;
